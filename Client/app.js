@@ -28,48 +28,80 @@
 
 
 
+
+
+function del(movieId){
+        $.ajax({
+            url: "https://localhost:44325/api/movie/"+ movieId,
+                dataType: 'json',
+                type: 'delete',
+                contentType: 'application/json',
+                data: JSON.stringify(movieId),
+                success: function(){
+                console.log("Success")
+    }
+})
+}
+
+
 // $(function(){
+//     $.del(movieId)
 
-//     data = {};
-//     console.log(data)
-//     $.get("https://localhost:44325/api/movie/", function(data){
-        
-//             $("#MovieInfo").append(`<div> MovieTitle: ${data["title"]}</div>
-//                  <div> Director: ${data["director"]}</div>
-//                  <div> Genre: ${data["genre"]}</div>
-//                 `)
-            
-//         })
-//     }
-// for(let i = 0; i< data.length; i++)
-
-// $("#Movies").append(`
-// <tr>
-// <td>${JSON.stringify(data[i]["title"])}</td>
-// <td>${JSON.stringify(data[i]["director"])}</td>
-// <td>${JSON.stringify(data[i]['genre'])}</td>
-// </tr>
-// `)
+//     $.ajax({
+//         url: "https://localhost:44325/api/movie/"+ movieId,
+//         data: JSON.stringify(data),
+//         success: function(data){
+//             $("#MovieInfo").`
+//                 `);
+//         }
+//     })
+// }
 
 
+// $(function del(movieId){
+//     $.ajax({
+//         url: "https://localhost:44325/api/movie/"+ movieId,
+//         type: 'delete'
 
 
+// })
+// })
 $(function(){
     $.get("https://localhost:44325/api/movie", function(data){
         {
         data.map(function(el){
             $("#Movies").append(`
-            <tr>
+            <tr id = "${(el.movieId)}">
             <td>${(el.title)}</td>
             <td>${(el.director)}</td>
             <td>${(el.genre)}</td>
-            <td><button type="submit">Edit</button></td>
+
+
+
+            <td>
+            <button onClick="edit(${(el.movieId)})">Edit</button>
+            <button onClick="del(${(el.movieId)})">Delete</button>
+            </td>
             </tr>
+
             `)
         })
         }
     })
 })
+
+
+
+// $(function(){
+//     $.delete(movieId)
+//     data = {};
+//     $.ajax({
+//         url: "https://localhost:44325/api/movie/"+ movieId,
+//         data: JSON.stringify(data),
+//         type: 'delete'
+//         }
+//     )
+// })
 
 // $(function(){
 // $.get(), function(data){
@@ -89,52 +121,23 @@ $(function(){
     // var movie = {
     //     movieId: this["movieId"].value
     // }
-$(function(){
 
-    var id = 1;
 
-    data = {};
-    $.ajax({
-        url: "https://localhost:44325/api/movie/"+ id,
-        data: JSON.stringify(data),
-        success: function(data){
-            $("#MovieInfo").append(`<div> MovieTitle: ${data["title"]}</div>
+//     var id = 1;
 
-                 <div> Director: ${data["director"]}</div>
+//     data = {};
+//     $.ajax({
+//         url: "https://localhost:44325/api/movie/"+ id,
+//         data: JSON.stringify(data),
+//         success: function(data){
+//             $("#MovieInfo").append(`<div> MovieTitle: ${data["title"]}</div>
 
-                 <div> Genre: ${data["genre"]}</div>
-                `);
-        }
-    })
-})
+//                  <div> Director: ${data["director"]}</div>
 
 
 
-(function($){
-    function processForm( f ){
-        var dict = {
-        	Title : this["title"].value,
-            Director: this["director"].value,
-            Genre: this["input"].value
-        }; 
-
-        
-        $.ajax({
-            url: 'https://localhost:44325/api/movie',
-            dataType: 'json',
-            type: 'post',
-            contentType: 'application/json',
-            data: JSON.stringify(dict),
-            success: function( data, textStatus, jQxhr ){
-                $('#response pre').html( data );
-            },
-            error: function( jqXhr, textStatus, errorThrown ){
-                console.log( errorThrown );
-            }
-        });
-
-        f.preventDefault();
-    }
-
-    $('#my-form').edit( processForm );
-})(jQuery);
+//                  <div> Genre: ${data["genre"]}</div>
+//                 `);
+//         }
+//     })
+// })
