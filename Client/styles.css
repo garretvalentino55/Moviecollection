@@ -1,0 +1,50 @@
+/* head
+{
+
+
+
+}
+
+body 
+{
+    padding: unset;
+    border-collapse: collapse;
+    width: 100%;
+    color: black;
+    margin-top: 20px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin: 20px;
+
+
+
+}
+
+div
+{
+    text-align: center;
+    background-color: lightgrey;
+    text-decoration-color: black;
+
+}
+ */
+
+form
+{
+    padding: unset;
+    background-color: cornsilk;
+    text-decoration-color: lawngreen;
+
+
+}
+
+
+button
+{
+    
+    
+}
+
+form#myform
+{
+    padding: unset;
+}
