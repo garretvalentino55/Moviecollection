@@ -26,3 +26,18 @@
     $('#my-form').submit( processForm );
 })(jQuery);
 
+
+
+$(function(){
+    var id = 3;
+    data = {};
+    $.ajax({
+        url: "https://localhost:44325/api/movie/"+ id,
+        data: JSON.stringify(data),
+        success: function(data){
+            $("#MovieInfo").append(`<div> MovieTitle: ${data["title"]}</div>
+                 <div> Genre: ${data["genre"]}</div>
+                `);
+        }
+    })
+})
