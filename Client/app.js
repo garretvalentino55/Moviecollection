@@ -124,32 +124,19 @@ $(function(){
     // }
 
 
-
-// function PostAction(){
-//     $.post()
-// }
-
-
-
-// $(function(){
+//     var id = 1;
 
 //     data = {};
-//     console.log(data)
-//     $.get("https://localhost:44325/api/movie/", function(data){
-        
+//     $.ajax({
+//         url: "https://localhost:44325/api/movie/"+ id,
+//         data: JSON.stringify(data),
+//         success: function(data){
 //             $("#MovieInfo").append(`<div> MovieTitle: ${data["title"]}</div>
-//                  <div> Director: ${data["director"]}</div>
-//                  <div> Genre: ${data["genre"]}</div>
-//                 `)
-            
-//         })
-//     }
-// for(let i = 0; i< data.length; i++)
 
-// $("#Movies").append(`
-// <tr>
-// <td>${JSON.stringify(data[i]["title"])}</td>
-// <td>${JSON.stringify(data[i]["director"])}</td>
-// <td>${JSON.stringify(data[i]['genre'])}</td>
-// </tr>
-// `)
+//                  <div> Director: ${data["director"]}</div>
+
+//                  <div> Genre: ${data["genre"]}</div>
+//                 `);
+//         }
+//     })
+// })
