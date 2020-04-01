@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using WebAPISample.Data;
 using WebAPISample.Models;
 
@@ -41,7 +42,14 @@ namespace WebAPISample.Controllers
         public IActionResult Post([FromBody]Movie value)
         {
             // Create movie in db logic
-            _context.Add(value);
+            Movie movie = new Movie
+            {
+                Title = value.Title,
+                Director = value.Director,
+                Genre = value.Genre
+            };
+            _context.Movies.Add(movie);
+            _context.SaveChanges();
 
             return Ok(value);
         }
