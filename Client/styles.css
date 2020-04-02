@@ -1,6 +1,5 @@
 head
 {
-
     text-align: center;
     background-color: lightgray;
     text-emphasis-color: black;
@@ -13,7 +12,6 @@ head
     scroll-padding-top: 20px;
     border-collapse: collapse;
     width: 100%;
-
 }
 
 body 
@@ -24,18 +22,16 @@ body
     color: black;
     margin-top: 20px;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    margin: 20px;
-
-
-
+    margin-right: 20px;
+   
 }
+
 
 div
 {
     text-align: center;
     background-color: lightgrey;
     text-decoration-color: black;
-
 }
  
 
@@ -45,15 +41,8 @@ form
     background-color: lightgray;
     text-decoration-color: rgb(255, 255, 255);
     padding: 40px;
-
 }
 
-
-button
-{
-    
-    
-}
 
 table
 {
@@ -68,8 +57,6 @@ table
     scroll-padding-top: 20px;
     width: 100%;
     border-collapse: collapse;
-
-
 }
 
 tr:nth-child(odd)
@@ -86,5 +73,10 @@ input
 {
     padding: inherit
     font-size initial;
-    width:30%
+    width:28%
+}
+
+footer 
+{
+    background-image:url("./pictures.jpg/redroom.jpg")no-repeat;
 }
