@@ -109,6 +109,8 @@ $(function(){
             <td>${(el.director)}</td>
             <td>${(el.genre)}</td>
 
+
+
             <td>
             <button class="edit">Edit</button>
             <button onClick="del(${(el.movieId)})">Delete</button>
@@ -120,3 +122,5 @@ $(function(){
         }
     })
 })
+
+
