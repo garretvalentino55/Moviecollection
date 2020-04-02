@@ -13,6 +13,7 @@
             contentType: 'application/json',
             data: JSON.stringify(dict),
             success: function( data, textStatus, jQxhr ){
+                location.reload(true);
                 $('#response pre').html( data );
             },
             error: function( jqXhr, textStatus, errorThrown ){
@@ -26,8 +27,36 @@
     $('#my-form').submit( processForm );
 })(jQuery);
 
+// function edit(movieId){
+//     id = $(this).attr("id");
+//     console.log(id);
+//     $.ajax({
+//         url: "https://localhost:44325/api/movie/"+ movieId,
+//             datatype: 'json',
+//             type: 'put',
+//             contentType: 'application/json',
+//             data: JSON.stringify(movieId),
+//             success: function(){
+//                 console.log("Success")
+//             }
+//     })
+// }
 
 
+//     $(".edit").click(function(){
+//       $("#19").hide();
+//     });
+//   });
+
+
+//   $(document).ready(function(){
+//     $(".edit").click(function(){
+//       $(".19").hide();
+//     });
+//     $(".edit").click(function(){
+//       $(".19").show();
+//     });
+//   });
 
 
 function del(movieId){
@@ -38,34 +67,35 @@ function del(movieId){
                 contentType: 'application/json',
                 data: JSON.stringify(movieId),
                 success: function(){
+                    location.reload();
+ 
                 console.log("Success")
     }
-})
+
+});
 }
 
 
-// $(function(){
-//     $.del(movieId)
 
-//     $.ajax({
-//         url: "https://localhost:44325/api/movie/"+ movieId,
-//         data: JSON.stringify(data),
-//         success: function(data){
-//             $("#MovieInfo").`
-//                 `);
-//         }
-//     })
-// }
+// $(function() {
+//     $('#Movies').on('click', 'tr', function(event) {
+//       $(this).addDisplay('none').siblings().removeClass('highlight');
+//     });
+
+//     $('#btnRowClick').click(function(e) {
+//       var rows = getHighlightRow();
+//       if (rows != undefined) {
+//         alert(rows.attr('id'));
+//       }
+//     });
+
+//     var getHighlightRow = function() {
+//       return $('tbody > tr.hide');
+//     }
+
+//   });
 
 
-// $(function del(movieId){
-//     $.ajax({
-//         url: "https://localhost:44325/api/movie/"+ movieId,
-//         type: 'delete'
-
-
-// })
-// })
 
 
 
@@ -74,13 +104,13 @@ $(function(){
         {
         data.map(function(el){
             $("#Movies").append(`
-            <tr id = "${(el.movieId)}">
+            <tr class = "${(el.movieId)}">
             <td>${(el.title)}</td>
             <td>${(el.director)}</td>
             <td>${(el.genre)}</td>
 
             <td>
-            <button onClick="edit(${(el.movieId)})">Edit</button>
+            <button class="edit">Edit</button>
             <button onClick="del(${(el.movieId)})">Delete</button>
             </td>
             </tr>
@@ -90,53 +120,3 @@ $(function(){
         }
     })
 })
-
-
-
-// $(function(){
-//     $.delete(movieId)
-//     data = {};
-//     $.ajax({
-//         url: "https://localhost:44325/api/movie/"+ movieId,
-//         data: JSON.stringify(data),
-//         type: 'delete'
-//         }
-//     )
-// })
-
-// $(function(){
-// $.get(), function(data){
-
-// }
-// }
-
-// $(function(){
-//     var tbody = document.getElementById("tbody");
-//     var row = tbody.row.insertRow()
-//     var title = row.insertCell1();
-//     var director = row.insertCell2();
-//     var genre = row.insertCell3();
-//     cell1.innerHTML = 
-
-
-    // var movie = {
-    //     movieId: this["movieId"].value
-    // }
-
-
-//     var id = 1;
-
-//     data = {};
-//     $.ajax({
-//         url: "https://localhost:44325/api/movie/"+ id,
-//         data: JSON.stringify(data),
-//         success: function(data){
-//             $("#MovieInfo").append(`<div> MovieTitle: ${data["title"]}</div>
-
-//                  <div> Director: ${data["director"]}</div>
-
-//                  <div> Genre: ${data["genre"]}</div>
-//                 `);
-//         }
-//     })
-// })
